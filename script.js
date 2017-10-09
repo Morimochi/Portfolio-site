@@ -1,18 +1,31 @@
-
-$('.burger').click(function(){
+// click nav link to scroll to its section
+function scrollTo(e){
+  e.preventDefault();
   
-  if($('.navbar').hasClass('showBar')){
-    $('.menu').each(function(){ $(this).slideUp(300); });  
-    $(this).removeClass('cross');
-    $('.navbar').removeClass('showBar');  
-  }else{
-    $(this).addClass('cross');
-    $('.navbar').addClass('showBar');
-  }
+  var linkText = $(this).text();
+  var sectionPos = $('section[id='+ linkText +']').offset().top-120;
+  
+  $('html').animate({scrollTop:sectionPos});
+}
+$('.link a').click(scrollTo);
+
+$('nav .fa').click(function(){
+  $('html').animate({scrollTop:20});
 });
 
 function showUp() {
-
+    // underline nav link when navigate to its section
+    $('.link a').each(function(){
+      var linkText = $(this).text();
+      var sectionPos = $('section[id='+ linkText +']').offset().top-150;
+      var sectionHeight = sectionPos + $('section[id='+ linkText +']').innerHeight();
+      
+      if (window.scrollY > sectionPos && window.scrollY < sectionHeight) {
+        $(this).siblings('.underline').addClass('coralLine');
+      }else{
+        $(this).siblings('.underline').removeClass('coralLine');
+      }
+    });
     // nav lifted and extended
     if (window.scrollY > 300) {$('nav').addClass('lift');}
     if (window.scrollY < 100) {$('nav').removeClass('lift');}
@@ -37,18 +50,15 @@ function showUp() {
 
 $(window).scroll(showUp);
 
-function scrollTo(e){
-  e.preventDefault();
+$('.burger').click(function(){
   
-  var linkText = $(this).text();
-  var sectionPos = $('section[id='+ linkText +']').offset().top-130;
-  
-  $('html').animate({scrollTop:sectionPos});
-}
-
-$('.link a').click(scrollTo);
-
-$('nav .fa').click(function(){
-  $('html').animate({scrollTop:20});
+  if($('.navbar').hasClass('showBar')){
+    $('.menu').each(function(){ $(this).slideUp(300); });  
+    $(this).removeClass('cross');
+    $('.navbar').removeClass('showBar');  
+  }else{
+    $(this).addClass('cross');
+    $('.navbar').addClass('showBar');
+  }
 });
 

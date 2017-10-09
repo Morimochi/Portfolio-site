@@ -181,7 +181,8 @@ p{
 section{
   width:94%;
   max-width:900px;
-  margin:100px auto 0;
+  margin:0 auto;
+  padding-top: 10px;
 }
 section:last-of-type{
   padding-bottom:20vh;
@@ -209,6 +210,9 @@ section a{
 section a:hover{
   background:white;
   color:#3E474F;
+}
+.addSpace{
+  height:250px;
 }
 .lift{
   -webkit-transform:translatey(-40px);
