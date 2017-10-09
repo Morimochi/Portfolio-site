@@ -39,8 +39,6 @@ $(window).scroll(showUp);
 
 function scrollTo(e){
   e.preventDefault();
-  // $('.coralLine').removeClass('coralLine');
-  // $(this).siblings('.underline').addClass('coralLine');
   
   var linkText = $(this).text();
   var sectionPos = $('section[id='+ linkText +']').offset().top-130;
