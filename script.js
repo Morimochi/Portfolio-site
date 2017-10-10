@@ -45,7 +45,7 @@ function showUp() {
         if (isShown) { $(this).addClass('show'); }
         if (window.scrollY === 0) { $(this).removeClass('show'); }
     }
-    $('h2,h3,p,section a,.arrow').each(show);
+    $('h2,h3,p,section a,.arrow,.list').each(show);
 }
 
 $(window).scroll(showUp);

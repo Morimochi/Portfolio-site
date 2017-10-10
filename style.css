@@ -144,7 +144,7 @@ h1{
 h2{
   margin-top: 70px;
 }
-h2,h3,p,section a,.arrow{
+h2,h3,p,section a,.arrow,.list{
   opacity: 0;
   position: relative;
   top: 100px;
@@ -193,7 +193,7 @@ section .fa{
 section h2{
   font-size: 70px;
 }
-section a{
+#Portfolio a{
   display:inline-block;
   width:400px;
   color:white;
@@ -207,9 +207,25 @@ section a{
   -webkit-transition:0.3s;
   transition:0.3s;
 }
-section a:hover{
+#Portfolio a:hover{
   background:white;
   color:#3E474F;
+}
+.list{
+  width:400px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+.list a{
+  width:100px;
+  color:white;
+}
+.list .fa{
+  font-size: 100px;
 }
 .addSpace{
   height:250px;
